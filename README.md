@@ -49,10 +49,10 @@ This project demonstrates DOM manipulation, asynchronous API integration, and CR
 ## Project Structure
 
 ```
-└── 📁trello-clone
-    └── 📁css
+└── trello-clone
+    └── css
         ├── style.css
-    └── 📁js
+    └── js
         ├── board.js
         ├── card.js
         ├── checkitem.js
