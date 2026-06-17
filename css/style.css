@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+.navbar h1 {
+    font-size: 1.5rem;
+}
+
+.board-controls {
+    display: flex;
+    gap: 10px;
+}
+
+
+button {
+    cursor: pointer;
+    border: none;
+
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+.board {
+    display: flex;
+    gap: 20px;
+
+    padding: 20px;
+
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+
+.list {
+    width: 320px;
+    min-width: 320px;
+
+    background: #1e293b;
+    border-radius: 10px;
+
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 85vh;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-header h3 {
+    font-size: 1.1rem;
+}
+
+.list-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.add-list {
+    min-width: 300px;
+    height: fit-content;
+
+    background: #1e293b;
+    border-radius: 12px;
+
+    padding: 12px;
+}
+
+.show-add-list-btn {
+    width: 100%;
+    padding: 12px;
+
+    background: transparent;
+    color: #fff;
+    border: none;
+
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background: #334155;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h4 {
+    font-size: 1rem;
+}
+
+.card-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#card-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checklist {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.checklist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+.checkitems {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 10px;
+}
+
+.checkitems li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+.checkitem-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkitem-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 5px 0 10px;
+}
+
+.delete-checkitem-btn {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background: #475569;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    padding: 0;
+}
+
+.delete-checkitem-btn:hover {
+    background: #475569;
+}
+
+.checkitem-row:hover {
+    background-color: #475569;
+    border-radius: 15px;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    width: 400px;
+    background: #475569;
+    color: #fff;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.completed-span {
+    font-size: small;
+    font-weight: lighter;
+}
+
+.card-details-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal input {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+#modal-save-btn {
+    background: #22c55e;
+    color: white;
+}
+
+#modal-cancel-btn {
+    background: #ef4444;
+    color: white;
+}
+
+#close-card-modal-btn {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+#close-card-details-btn {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+.edit-card-btn,
+.delete-card-btn {
+    background: #1e293b;
+    color: #fff;
+}
+
+.edit-list-btn,
+.delete-list-btn {
+    background-color: #475569;
+    color: #fff;
+}
+
+.rename-checklist-btn,
+.delete-checklist-btn {
+    background-color: #475569;
+    color: #fff;
+}
+
+
+
+.board::-webkit-scrollbar {
+    height: 10px;
+}
+
+.board::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 10px;
+}
+
+.cards {
+    overflow: scroll;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background: #475569;
+}
